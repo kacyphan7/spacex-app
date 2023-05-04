@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlink</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        ul.is-unstyled {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content columns mt-2 mb-2">
+        <div class="column"></div>
+        <section class="column is-flex-grow-2">
+            <h1>Starlink</h1>
+            <% if (searchBy) { %>
+                <h4><%= searchBy %> = <%= searchVal %></h4>
+            <% } %>
+            <% if (message) { %>
+                <h3><%= message %></h3>
+            <% } else { %>
+                <% starlink.forEach((sat) => { %>
+                    <hr />
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <span class="has-text-weight-medium">ID: </span><%= sat.id %><br />
+                                <span class="has-text-weight-medium">Launch: </span><%= sat.launch %><br />
+                                <span class="has-text-weight-medium">Version: </span><%= sat.version %><br />
+                                <span class="has-text-weight-medium">Height (km): </span><%= sat.height_km %><br />
+                                <span class="has-text-weight-medium">GPS (lat, long): </span><%= sat.latitude %>, <%= sat.longitude %><br />
+                                <span class="has-text-weight-medium">Velocity (kms): </span><%= sat.velocity_kms %><br />
+                                <span class="has-text-weight-medium">Space Track:</span>
+                                <ul class="is-unstyled">
+                                    <li>CCSDS_OMM_VERS: <%= sat.spaceTrack.CCSDS_OMM_VERS %></li>
+                                    <li>COMMENT: <%= sat.spaceTrack.COMMENT %></li>
+                                    <li>CREATION_DATE: <%= sat.spaceTrack.CREATION_DATE %></li>
+                                    <li>ORIGINATOR: <%= sat.spaceTrack.ORIGINATOR %></li>
+                                    <li>OBJECT_NAME: <%= sat.spaceTrack.OBJECT_NAME %></li>
+                                    <li>OBJECT_ID: <%= sat.spaceTrack.OBJECT_ID %></li>
+                                    <li>CENTER_NAME: <%= sat.spaceTrack.CENTER_NAME %></li>
+                                    <li>REF_FRAME: <%= sat.spaceTrack.REF_FRAME %></li>
+                                    <li>TIME_SYSTEM: <%= sat.spaceTrack.TIME_SYSTEM %></li>
+                                    <li>MEAN_ELEMENT_THEORY: <%= sat.spaceTrack.MEAN_ELEMENT_THEORY %></li>
+                                    <li>EPOCH: <%= sat.spaceTrack.EPOCH %></li>
+                                    <li>MEAN_MOTION: <%= sat.spaceTrack.MEAN_MOTION %></li>
+                                    <li>ECCENTRICITY: <%= sat.spaceTrack.ECCENTRICITY %></li>
+                                    <li>INCLINATION: <%= sat.spaceTrack.INCLINATION %></li>
+                                    <li>RA_OF_ASC_NODE: <%= sat.spaceTrack.RA_OF_ASC_NODE %></li>
+                                    <li>ARG_OF_PERICENTER: <%= sat.spaceTrack.ARG_OF_PERICENTER %></li>
+                                    <li>MEAN_ANOMALY: <%= sat.spaceTrack.MEAN_ANOMALY %></li>
+                                    <li>EPHEMERIS_TYPE: <%= sat.spaceTrack.EPHEMERIS_TYPE %></li>
+                                    <li>CLASSIFICATION_TYPE: <%= sat.spaceTrack.CLASSIFICATION_TYPE %></li>
+                                    <li>NORAD_CAT_ID: <%= sat.spaceTrack.NORAD_CAT_ID %></li>
+                                    <li>ELEMENT_SET_NO: <%= sat.spaceTrack.ELEMENT_SET_NO %></li>
+                                    <li>REV_AT_EPOCH: <%= sat.spaceTrack.REV_AT_EPOCH %></li>
+                                    <li>BSTAR: <%= sat.spaceTrack.BSTAR %></li>
+                                    <li>MEAN_MOTION_DOT: <%= sat.spaceTrack.MEAN_MOTION_DOT %></li>
+                                    <li>MEAN_MOTION_DDOT: <%= sat.spaceTrack.MEAN_MOTION_DDOT %></li>
+                                    <li>SEMIMAJOR_AXIS: <%= sat.spaceTrack.SEMIMAJOR_AXIS %></li>
+                                    <li>PERIOD: <%= sat.spaceTrack.PERIOD %></li>
+                                    <li>APOAPSIS: <%= sat.spaceTrack.APOAPSIS %></li>
+                                    <li>PERIAPSIS: <%= sat.spaceTrack.PERIAPSIS %></li>
+                                    <li>OBJECT_TYPE: <%= sat.spaceTrack.OBJECT_TYPE %></li>
+                                    <li>RCS_SIZE: <%= sat.spaceTrack.RCS_SIZE %></li>
+                                    <li>COUNTRY_CODE: <%= sat.spaceTrack.COUNTRY_CODE %></li>
+                                    <li>LAUNCH_DATE: <%= sat.spaceTrack.LAUNCH_DATE %></li>
+                                    <li>SITE: <%= sat.spaceTrack.SITE %></li>
+                                    <li>DECAY_DATE: <%= sat.spaceTrack.DECAY_DATE %></li>
+                                    <li>DECAYED: <%= sat.spaceTrack.DECAYED %></li>
+                                    <li>FILE: <%= sat.spaceTrack.FILE %></li>
+                                    <li>GP_ID: <%= sat.spaceTrack.GP_ID %></li>
+                                    <li>TLE_LINE0: <%= sat.spaceTrack.TLE_LINE0 %></li>
+                                    <li>TLE_LINE1: <%= sat.spaceTrack.TLE_LINE1 %></li>
+                                    <li>TLE_LINE2: <%= sat.spaceTrack.TLE_LINE2 %></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>
+        <div class="column"></div>
+    </div>
+</body>
+
+</html>

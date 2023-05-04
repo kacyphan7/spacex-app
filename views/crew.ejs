@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Crew</title>
+</head>
+<body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th>Status</th>
+          <th><abbr title="name">Name</abbr></th>
+          <th><abbr title="agency">Agency</abbr></th>
+          <th><abbr title="image">Image</abbr></th>
+          <th><abbr title="wikipedia">Wikipedia</abbr></th>
+          <th><abbr title="launches">Launches</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% crew.forEach(function(member) { %>
+        <tr>
+          <td><%= member.id %></td>
+          <td><%= member.status %></td>
+          <td><%= member.name %></td>
+          <td><%= member.agency %></td>
+          <td><%= member.image %></td>
+          <td><%= member.wikipedia %></td>
+          <td><%= member.launches %></td>
+          <td><%= member.launches.join(", ") %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+  
+</html>

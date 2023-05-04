@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="content columns mt-2 mb-2">
+        <div class="column"></div>
+        <section class="column is-flex-grow-2"> <!-- hero is-fullheight -->
+            <h1>History Events</h1>
+            <% if (message) { %>
+                <h3><%= message %></h3>
+            <% } else { %>
+                <% history.forEach((event) => { %>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">
+                                        <%= event.title %>
+                                        <% if (event.links.article) { %>
+                                            - <a href="<%= event.links.article %>">article</a>
+                                        <% } %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <%= event.details %>
+                                <br />
+                                <br />
+                                <time><%= event.event_date_utc %></time>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>
+        <div class="column"></div>
+    </div>
+</body>
+
+</html>

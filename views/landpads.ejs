@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Landpads</title>
+</head>
+<body>
+    <body>
+        <div style="overflow-x: auto;">
+        <table class="table">
+            <thead>
+              <tr>
+                <th><abbr title="id">ID</abbr></th>
+                <th>status</th>
+                <th><abbr title="name">Name</abbr></th>
+                <th><abbr title="full_name">Full Name</abbr></th>
+                <th><abbr title="type">Type</abbr></th>
+                <th><abbr title="locality">Locality</abbr></th>
+                <th><abbr title="region">Region</abbr></th>
+                <th><abbr title="latitude">Latitude</abbr></th>
+                <th><abbr title="longitude">Longitude</abbr></th>
+                <th><abbr title="landing-attempts">Landing Attempts</abbr></th>
+                <th><abbr title="landing-successes">Landing Successes</abbr></th>
+                <th><abbr title="wikipedia">Wikipedia</abbr></th>
+                <th><abbr title="details">Details</abbr></th>
+                <th><abbr title="launches">Launches</abbr></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% landpads.forEach(function(landpad) { %>
+              <tr>
+                <td><%= landpad.id %></td>
+                <td><%= landpad.status %></td>
+                <td><%= landpad.name %></td>
+                <td><%= landpad.full_name %></td>
+                <td><%= landpad.type %></td>
+                <td><%= landpad.locality %></td>
+                <td><%= landpad.region %></td>
+                <td><%= landpad.latitude %></td>
+                <td><%= landpad.longitude %></td>
+                <td><%= landpad.landing_attempts %></td>
+                <td><%= landpad.landing_successes %></td>
+                <td><%= landpad.wikipedia %></td>
+                <td><%= landpad.details %></td>
+                <td><%= landpad.launches %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </body>
+</html>

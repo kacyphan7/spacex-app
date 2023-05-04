@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Cores</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+          <tr>
+            <th><abbr title="id">ID</abbr></th>
+            <th><abbr title="serial">Serial</abbr></th>
+            <th>Status</th>
+            <th><abbr title="block">Block</abbr></th>
+            <th><abbr title="reuse-count">Reuse Count</abbr></th>
+            <th><abbr title="rtls-attempts">RTLS Attempts</abbr></th>
+            <th><abbr title="rtls-landings">RTLS Landings</abbr></th>
+            <th><abbr title="asds-attempts">ASDS Attempts</abbr></th>
+            <th><abbr title="asds-landings">ASDS Landings</abbr></th>
+            <th><abbr title="last-update">Last Update</abbr></th>
+            <th><abbr title="launches">Launches</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cores.forEach(function(core) { %>
+          <tr>
+            <td><%= core.id %>
+            <td><%= core.serial %>
+            <td><%= core.status %>
+            <td><%= core.block %>
+            <td><%= core.reuse_count %>
+            <td><%= core.rtls_attempts %>
+            <td><%= core.rtls_landings %>
+            <td><%= core.asds_attempts %>
+            <td><%= core.asds_landings %>
+            <td><%= core.last_update %>
+            <td><%= core.launches %>     
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Launches</title>
+</head>
+<body>
+    <div style="overflow-x: auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th><abbr title="capsules">Capsules</abbr></th>
+          <th><abbr title="payloads">Payloads</abbr></th>
+          <th><abbr title="launchpad">Launchpad</abbr></th>
+          <th><abbr title="flight-number">Flight Number</abbr></th>
+          <th><abbr title="name">Name</abbr></th>
+          <th><abbr title="date-utc">Date Utc</abbr></th>
+          <th><abbr title="date-unix">Date Unix</abbr></th>
+          <th><abbr title="date-local">Date Local</abbr></th>
+          <th><abbr title="date-precision">Date precision</abbr></th>
+          <th><abbr title="upcoming">Upcoming</abbr></th>
+          <th><abbr title="cores">Cores</abbr></th>
+          <th><abbr title="auto-update">Auto Update</abbr></th>
+          <th><abbr title="tbd">TBD</abbr></th>
+          <th><abbr title="launch-library-id">Launch Library ID</abbr></th>
+          <th><abbr title="fairings-reused">Fairing Reused</abbr></th>
+          <th><abbr title="fairings-recovery-attempt">Fairing Recovery Attempt</abbr></th>
+          <th><abbr title="fairings-recovered">Fairing Recovered</abbr></th>
+          <th><abbr title="fairings-ships">Fairing Ships</abbr></th>
+          <th><abbr title="links-patch">Links Patch</abbr></th>
+          <th><abbr title="links-reddit">Links Reddit</abbr></th>
+          <th><abbr title="links-flickr">Links Flickr</abbr></th>
+          <th><abbr title="links-webcast">Links Webcast</abbr></th>
+          <th><abbr title="links-youtube-id">Links Youtube ID</abbr></th>
+          <th><abbr title="links-article">Links Article</abbr></th>
+          <th><abbr title="links-wikipedia">Links Wikipedia</abbr></th>
+          <th><abbr title="static-fire-date-utc">Static Fire Date Utc</abbr></th>
+          <th><abbr title="static-fire-date-unix">Static Fire Date Unix</abbr></th>
+          <th><abbr title="net">Net</abbr></th>
+          <th><abbr title="window">Window</abbr></th>
+          <th><abbr title="rocket">Rocket</abbr></th>
+          <th><abbr title="success">Success</abbr></th>
+          <th><abbr title="failures">Failures</abbr></th>
+          <th><abbr title="details">Details</abbr></th>
+          <th><abbr title="crew">Crew</abbr></th>
+          <th><abbr title="ships">Ships</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% launches.forEach(function(launch) { %>
+          <tr>
+            <td><%= launch.id %></td>
+            <td><%= launch.capsules %></td>
+            <td><%= launch.payloads %></td>
+            <td><%= launch.launchpad %></td>
+            <td><%= launch.flight_number %></td>
+            <td><%= launch.name %></td>
+            <td><%= launch.date_utc %></td>
+            <td><%= launch.date_unix %></td>
+            <td><%= launch.date_local %></td>
+            <td><%= launch.date_precision %></td>
+            <td><%= launch.upcoming %></td>
+            <td><%= launch.cores %></td>
+            <td><%= launch.auto_update %></td>
+            <td><%= launch.tbd %></td>
+            <td><%= launch.launch_library_id %></td>
+            <td><%= launch.fairings ? launch.fairings.reused : '' %></td>
+            <td><%= launch.fairings ? launch.fairings.recovery_attempt : '' %></td>
+            <td><%= launch.fairings ? launch.fairings.recovered : '' %></td>
+            <td><%= launch.fairings ? launch.fairings.ships : '' %></td>
+            <td><%= launch.links.patch %></td>
+            <td><%= launch.links.webcast %></td>
+            <td><%= launch.links.reddit %></td>
+            <td><%= launch.links.flickr %></td>
+            <td><%= launch.links.youtube_id %></td>
+            <td><%= launch.links.article %></td>
+            <td><%= launch.links.wikipedia %></td>
+            <td><%= launch.static_fire_date_utc %></td>
+            <td><%= launch.static_fire_date_unix %></td>
+            <td><%= launch.net %></td>
+            <td><%= launch.window %></td>
+            <td><%= launch.rocket %></td>
+            <td><%= launch.success %></td>
+            <td><%= launch.failures %></td>
+            <td><%= launch.details %></td>
+            <td><%= launch.crew %></td>
+            <td><%= launch.ships %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>

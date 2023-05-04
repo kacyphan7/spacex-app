@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Launchpads</title>
+</head>
+<body>
+    <div style="overflow-x: auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th>status</th>
+          <th><abbr title="images">Images</abbr></th>
+          <th><abbr title="name">Name</abbr></th>
+          <th><abbr title="full-name">Full Name</abbr></th>
+          <th><abbr title="locality">Locality</abbr></th>
+          <th><abbr title="region">Region</abbr></th>
+          <th><abbr title="latitude">Latitude</abbr></th>
+          <th><abbr title="longitude">Longitude</abbr></th>
+          <th><abbr title="launch-attempts">Launch Attempts</abbr></th>
+          <th><abbr title="launch-successes">Launch Successes</abbr></th>
+          <th><abbr title="rockets">Rockets</abbr></th>
+          <th><abbr title="timezone">Timezone</abbr></th>
+          <th><abbr title="launches">Launches</abbr></th>
+          <th><abbr title="details">Details</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% launchpads.forEach(function(launchpads) { %>
+        <tr>
+          <td><%= launchpads.id %></td>
+          <td><%= launchpads.status %></td>
+          <td><%= launchpads.images %></td>
+          <td><%= launchpads.name %></td>
+          <td><%= launchpads.full_name %></td>
+          <td><%= launchpads.locality %></td>
+          <td><%= launchpads.region %></td>
+          <td><%= launchpads.latitude %></td>
+          <td><%= launchpads.longitude %></td>
+          <td><%= launchpads.launch_attempts %></td>
+          <td><%= launchpads.launch_successes %></td>
+          <td><%= launchpads.rockets %></td>
+          <td><%= launchpads.timezone %></td>
+          <td><%= launchpads.launches %></td>
+          <td><%= launchpads.details %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+   </div>
+  </body>
+</html>

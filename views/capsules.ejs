@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsules</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th><abbr title="serial">Serial</abbr></th>
+          <th>Status</th>
+          <th><abbr title="type">Type</abbr></th>
+          <th><abbr title="water-landings">Water Landings</abbr></th>
+          <th><abbr title="land-landings">Land Landings</abbr></th>
+          <th><abbr title="reuse-count">Reuse Count</abbr></th>
+          <th><abbr title="last-update">Last Update</abbr></th>
+          <th><abbr title="launches">Launches</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% capsules.forEach(function(capsule) { %>
+        <tr>
+          <td><%= capsule.id %></td>
+          <td><%= capsule.serial %></td>
+          <td><%= capsule.status %></td>
+          <td><%= capsule.type %></td>
+          <td><%= capsule.water_landings %></td>
+          <td><%= capsule.land_landings %></td>
+          <td><%= capsule.reuse_count %></td>
+          <td><%= capsule.last_update %></td>
+          <td><%= capsule.launches %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

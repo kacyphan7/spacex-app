@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Dragons</title>
+</head>
+<body>
+    <div style="overflow-x: auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th>Active</th>
+          <th><abbr title="name">Name</abbr></th>
+          <th><abbr title="crew-capacity">Crew Capacity</abbr></th>
+          <th><abbr title="sidewall_angle_deg">Sidewall Angle Deg</abbr></th>
+          <th><abbr title="orbit_duration_yr">Orbit Duration</abbr></th>
+          <th><abbr title="dry-mass-kg">Dry Mass Kg</abbr></th>
+          <th><abbr title="dry-mass-lb">Dry Mass lb</abbr></th>
+          <th><abbr title="thrusters">Thrusters</abbr></th>
+          <th><abbr title="image">Image</abbr></th>
+          <th><abbr title="wikipedia">Wikipedia</abbr></th>
+          <th><abbr title="description">Description</abbr></th>
+          <th><abbr title="heat-shield-material">Heat Shield Material</abbr></th>
+          <th><abbr title="heat-shield-size-meters">Heat Shield Size Meters</abbr></th>
+          <th><abbr title="heat-shield-temp-degrees">Heat Shield Temp Degrees</abbr></th>
+          <th><abbr title="heat-shield-dev-partners">Heat Shield Dev Partners</abbr></th>
+          <th><abbr title="launch-payload-mass">Launch Payload Mass</abbr></th>
+          <th><abbr title="launch-payload-vol">Launch Payload Vol</abbr></th>
+          <th><abbr title="return-payload-mass">Return Payload Mass</abbr></th>
+          <th><abbr title="return-payload-vol">Return Payload Vol</abbr></th>
+          <th><abbr title="pressurized-capsule">Pressurized Capsule</abbr></th>
+          <th><abbr title="trunk">Trunk</abbr></th>
+          <th><abbr title="height-w-trunk">Height W Trunk</abbr></th>
+          <th><abbr title="diameter">Diameter</abbr></th>
+          <th><abbr title="first-flight">First Flight</abbr></th>
+          <th><abbr title="flickr-images">Flickr Images</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% dragons.forEach(function(dragons) { %>
+        <tr>
+          <td><%= dragons.id %></td>
+          <td><%= dragons.active %></td>
+          <td><%= dragons.name %></td>
+          <td><%= dragons.crew_capacity %></td>
+          <td><%= dragons.sidewall_angle_deg %></td>
+          <td><%= dragons.orbit_duration_yr %></td>
+          <td><%= dragons.dry_mass_kg %></td>
+          <td><%= dragons.dry_mass_lb %></td>
+          <td><%= dragons.thrusters %></td>
+          <td><%= dragons.image %></td>
+          <td><%= dragons.wikipedia %></td>
+          <td><%= dragons.description %></td>
+          <td><%= dragons.heat_shield.material %></td>
+          <td><%= dragons.heat_shield.size_meters %></td>
+          <td><%= dragons.heat_shield.temp_degrees %></td>
+          <td><%= dragons.heat_shield.dev_partner %></td>
+          <td><%= dragons.launch_payload_mass %></td>
+          <td><%= dragons.launch_payload_vol %></td>
+          <td><%= dragons.return_payload_mass %></td>
+          <td><%= dragons.return_payload_vol %></td>
+          <td><%= dragons.pressurized_capsule %></td>
+          <td><%= dragons.trunk %></td>
+          <td><%= dragons.height_w_trunk %></td>
+          <td><%= dragons.diameter %></td>
+          <td><%= dragons.first_flight %></td>
+          <td><%= dragons.flickr_images %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+   </div>
+  </body>
+</html>

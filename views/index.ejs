@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space X App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+          <p class="title is-1"><%= company.name %></p>
+          <p class="title">
+            <%= company.summary %>
+          </p>
+          <p class="subtitle">
+            <%= company.founder %>
+          </p>
+        </div>
+        <article class="message is-dark">
+          <div class="message-body">
+            Headquarters:
+            <%= company.headquarters.address %>,
+            <%= company.headquarters.city %>,
+            <%= company.headquarters.state %>
+            <br>
+            Founded: <%= company.founded %>
+            <br>
+            Founder: <%= company.founder %>
+            <br>
+            CEO: <%= company.ceo %>
+            <br>
+            CTO: <%= company.cto %>
+            <br>
+            COO: <%= company.coo %>
+            <br>
+            Employees: <%= company.employees %>
+          </div>
+        </article>
+        </div>
+        <article class="message is-dark">
+          <div class="message-body">
+            Vehicles: <%= company.vehicles %>
+            <br>
+            Launch Sites: <%= company.launch_sites %>
+            <br>
+            Test Sites: <%= company.test_sites %>
+            <br>
+            CTO Propulsion: <%= company.cto_propulsion %>
+            <br>
+            Valuation: <%= company.valuation %>
+            <br>
+            ID: <%= company.id %>
+          </div>
+        </article>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.twitter %>">Twitter</a>
+            </span>
+          </p>
+           <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.elon_twitter %>">Elon's Twitter</a>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.flickr %>">Flickr</a>
+            </span>
+          </p>
+           <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.website %>">Company's Website</a>
+            </span>
+          </p>
+        </footer>
+      </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Launchpads</title>
+</head>
+<body>
+    <div style="overflow-x: auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><abbr title="id">ID</abbr></th>
+          <th><abbr title="name">Name</abbr></th>
+          <th><abbr title="type">Type</abbr></th>
+          <th><abbr title="reused">Reused</abbr></th>
+          <th><abbr title="launch">Launch</abbr></th>
+          <th><abbr title="customers">Customers</abbr></th>
+          <th><abbr title="norad_ids">Norad IDs</abbr></th>
+          <th><abbr title="nationalities">Nationalities</abbr></th>
+          <th><abbr title="manufacturers">Manufacturers</abbr></th>
+          <th><abbr title="mass_kg">Mass kg</abbr></th>
+          <th><abbr title="mass_lbs">Mass lbs</abbr></th>
+          <th><abbr title="orbit">Orbit</abbr></th>
+          <th><abbr title="reference_system">Reference System</abbr></th>
+          <th><abbr title="regime">Regime</abbr></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% payloads.forEach(function(payloads) { %>
+        <tr>
+          <td><%= payloads.id %></td>
+          <td><%= payloads.name %></td>
+          <td><%= payloads.type %></td>
+          <td><%= payloads.reused %></td>
+          <td><%= payloads.launch %></td>
+          <td><%= payloads.customers %></td>
+          <td><%= payloads.norad_ids %></td>
+          <td><%= payloads.nationalities %></td>
+          <td><%= payloads.manufacturers %></td>
+          <td><%= payloads.mass_kg %></td>
+          <td><%= payloads.mass_lbs %></td>
+          <td><%= payloads.orbit %></td>
+          <td><%= payloads.reference_system %></td>
+          <td><%= payloads.regime %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+   </div>
+  </body>
+</html>

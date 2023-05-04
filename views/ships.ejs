@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ships</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        ul.is-unstyled {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content columns mt-2 mb-2">
+        <div class="column"></div>
+        <section class="column is-flex-grow-2">
+            <h1>Ships</h1>
+            <% if (searchBy) { %>
+                <h4><%= searchBy %> = <%= searchVal %></h4>
+            <% } %>
+            <% if (message) { %>
+                <h3><%= message %></h3>
+            <% } else { %>
+                <% ships.forEach((ship) => { %>
+                    <hr />
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="i-5">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <figure class="image is-4by3">
+                                                <img src="<%= ship.image %>" alt="ship">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="media">
+                                                <div class="media-content">
+                                                    <p class="title is-4"><%= ship.name %></p>
+                                                    <p class="subtitle is-6">
+                                                        <% if (ship.link) { %>
+                                                            <span class="has-text-weight-medium"><a href="<%= ship.link %>">Details</a></span><br />
+                                                        <% } %>
+                                                        <br />
+                                                        <span class="has-text-weight-medium">Type: </span><%= ship.type %><br />
+                                                        <span class="has-text-weight-medium">Model: </span><%= ship.model %><br />
+                                                        <span class="has-text-weight-medium">Class: </span><%= ship.class %><br />
+                                                        <span class="has-text-weight-medium">Active: </span><%= ship.active %><br />
+                                                        <span class="has-text-weight-medium">Status: </span><%= ship.status %><br />
+                                                        <span class="has-text-weight-medium">Mass (kg/lb): </span><%= ship.mass_kg %>/ <%= ship.mass_lb %><br />
+                                                        <span class="has-text-weight-medium">Last AIS Update: </span><%= ship.last_ais_update %><br />
+                                                        <span class="has-text-weight-medium">Roles:</span>
+                                                        <ul class="is-unstyled">
+                                                            <% ship.roles.forEach((role) => { %>
+                                                                <li><%= role %></li>
+                                                            <% }); %>
+                                                        </ul>
+                                                        <span class="has-text-weight-medium">IMO: </span><%= ship.imo %><br />
+                                                        <span class="has-text-weight-medium">MMSI: </span><%= ship.mmsi %><br />
+                                                        <span class="has-text-weight-medium">ABS: </span><%= ship.abs %><br />
+                                                        <span class="has-text-weight-medium">Year Built: </span><%= ship.year_built %><br />
+                                                        <span class="has-text-weight-medium">Home Port: </span><%= ship.home_port %><br />
+                                                        <span class="has-text-weight-medium">Speed (kn): </span><%= ship.speed_kn %><br />
+                                                        <span class="has-text-weight-medium">Course (deg): </span><%= ship.course_deg %><br />
+                                                        <span class="has-text-weight-medium">GPS (lat, long): </span><%= ship.latitude %>, <%= ship.longitude %><br />
+                                                        <span class="has-text-weight-medium">Launches:</span>
+                                                        <ul class="is-unstyled">
+                                                            <% ship.launches.forEach((launch) => { %>
+                                                                <li> <%= launch %></li>
+                                                            <% }); %>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>
+        <div class="column"></div>
+    </div>
+</body>
+
+</html>
